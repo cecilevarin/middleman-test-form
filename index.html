@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>Middleman test adding a form with Zappier. Feb 2018</title>
+    <link href="stylesheets/application-831e7867.css" rel="stylesheet" />
+    <script src="javascripts/application-93de88c9.js"></script>
+    <link href="images/favicon-f15af148.png" rel="icon" type="image/png" />
+  </head>
+  <body>
+    <div id="home">
+  <div class="home-content">
+    <div class="intro">
+      <p>
+        This a test to add a form to a Middleman website with email notification on form submission, using Zapier webhook
+      </p>
+      <p>Note that Zapier plan is currently free for a 2-step Zap (Webhook + Outbound email notification), but limited to 10 submissions per hour</p>
+    </div>
+      <p>
+        <a href="https://www.harrycresswell.com/articles/form-data-with-zapier/" target="_blank" class="text-center">See tutorial</a>
+      </p>
+    <form id="myForm">
+      <input class="" type="text" name="full-name" placeholder="What's your name?" required>
+      <input class="" type="email" name="email-address" placeholder="What's your email address?" required>
+      <input class="" type="submit" value="Submit" id="Form-submit"/>
+    </form>
+  </div>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+    $('#myForm').submit(function(e){
+        e.preventDefault();
+        $.ajax({
+        url:'https://hooks.zapier.com/hooks/catch/2978187/zg3jey/',
+        type:'post',
+        data:$('#myForm').serialize(),
+        success:function(){
+          // Change URL to page you would like to send the user after form is submitted
+          window.location = "#";
+        }
+      });
+    });
+  </script>
+</div>
+
+  </body>
+</html>
