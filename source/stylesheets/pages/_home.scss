@@ -1,0 +1,35 @@
+#home {
+  background-color: #a2bfbd;
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  p {
+    margin-top: 1.5em;
+  }
+  a {
+    color: rgba(0,0,0,0.4);
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+.intro {
+  width : 400px;
+  margin: 0 auto;
+  text-align: justify;
+  }
+
+#myForm{
+  font-size: 14px;
+  color: black;
+  margin: 40px;
+  input {
+    width: 300px;
+  }
+  #Form-submit {
+    width: 200px;
+  }
+}
